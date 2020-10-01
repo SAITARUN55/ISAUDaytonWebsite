@@ -82,4 +82,30 @@
   }
 
   /* card css */
+  .cards {
+    display: flex;
+    --distance: -4rem;
+  }
+    
   
+  .card {
+    background: #e8f9fd;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 4px 4px 12px 2px rgba(0, 0, 0, 0.75);
+    transition: 0.2s;
+  }
+  
+  .card:not(:first-child) {
+    margin-left: var(--distance);
+  }
+  
+  .card:hover,
+  .card:focus-within {
+    transform: translateY(-5rem);
+  }
+  
+  .card:hover ~ .card,
+  .card:focus-within ~.card {
+    transform: translateX(calc(var(--distance)*-1));
+  }
